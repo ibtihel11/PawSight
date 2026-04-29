@@ -2,8 +2,7 @@
 
 A high-performance deep learning application designed to classify images of cats and dogs with high accuracy and speed. Built using transfer learning and a modern web stack.
 
-<img width="1920" height="2266" alt="PawSight-·-Cat-vs-Dog-AI-Classifier1" src="https://github.com/user-attachments/assets/29326015-7420-4231-9040-1ec29527bd3c" />
-
+<img width="1920" height="1331" alt="PawSight-·-Cat-vs-Dog-AI-Classifier1" src="https://github.com/user-attachments/assets/a08492a5-4112-4ffb-abca-6960d2518caf" />
 
 ---
 
