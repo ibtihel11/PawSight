@@ -1,0 +1,254 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ─── Glow orbs ──────────────────────────────────────────────────────────── */
+.orb1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,163,40,0.08) 0%, transparent 70%);
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: pulse1 8s ease-in-out infinite alternate;
+}
+
+.orb2 {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,122,95,0.06) 0%, transparent 70%);
+  bottom: 0; right: -100px;
+  pointer-events: none;
+  animation: pulse2 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulse1 {
+  from { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  to   { opacity: 1;   transform: translateX(-50%) scale(1.15); }
+}
+@keyframes pulse2 {
+  from { opacity: 0.4; transform: scale(1); }
+  to   { opacity: 0.8; transform: scale(1.2); }
+}
+
+/* ─── Pill ───────────────────────────────────────────────────────────────── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border: 1px solid rgba(232,163,40,0.25);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s var(--ease-out) both;
+}
+
+.pillDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Heading ────────────────────────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 9vw, 88px);
+  font-weight: 400;
+  line-height: 1.0;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.1s var(--ease-out) both;
+}
+
+.headingLight { color: var(--text-0); }
+
+.headingAccent {
+  color: var(--gold);
+  font-style: italic;
+  position: relative;
+}
+
+/* Underline accent on italic text */
+.headingAccent::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+/* ─── Subtitle ───────────────────────────────────────────────────────────── */
+.sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-1);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s 0.18s var(--ease-out) both;
+}
+
+/* ─── Actions ────────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+  animation: fadeUp 0.7s 0.26s var(--ease-out) both;
+}
+
+.ctaPrimary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: #0a0908;
+  background: var(--gold);
+  border: none;
+  padding: 13px 28px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232,163,40,0.35);
+  background: #f0ad2e;
+}
+
+.ctaPrimary:active { transform: translateY(0) scale(0.98); }
+
+.ctaSecondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-1);
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.ctaSecondary:hover {
+  color: var(--text-0);
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.04);
+}
+
+/* ─── Stats bar ──────────────────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px 32px;
+  animation: fadeUp 0.7s 0.36s var(--ease-out) both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 28px;
+}
+
+.statVal {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-0);
+  letter-spacing: -0.01em;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+}
+
+.statDivider {
+  width: 1px;
+  height: 36px;
+  background: var(--line-strong);
+}
+
+/* ─── Floating icons ─────────────────────────────────────────────────────── */
+.floatWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floatIcon {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.07;
+  animation: floatUp calc(12s + var(--i) * 3s) ease-in-out infinite;
+  left: calc(10% + var(--i) * 20%);
+  bottom: -40px;
+  animation-delay: calc(var(--i) * 2.4s);
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.07; }
+  90%  { opacity: 0.07; }
+  100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+
+/* ─── Keyframe shared ────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .stats {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  .statDivider { width: 100%; height: 1px; }
+  .stat { padding: 0; }
+
+  .sub { font-size: 16px; }
+}
