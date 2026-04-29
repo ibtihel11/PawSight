@@ -1,6 +1,7 @@
 # PawSight AI - Cat vs. Dog Classifier
 
 A high-performance deep learning application designed to classify images of cats and dogs with high accuracy and speed. Built using transfer learning and a modern web stack.
+![Uploading PawSight-·-Cat-vs-Dog-AI-Classifier1.png…]()
 
 ---
 
